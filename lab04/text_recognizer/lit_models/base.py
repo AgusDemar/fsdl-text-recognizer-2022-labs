@@ -138,3 +138,7 @@ class BaseImageToTextLitModel(BaseLitModel):  # pylint: disable=too-many-ancesto
         self.ignore_tokens = [self.start_index, self.end_index, self.padding_index]
         self.val_cer = CharacterErrorRate(self.ignore_tokens)
         self.test_cer = CharacterErrorRate(self.ignore_tokens)
+        
+        self.train_min = MinMetric()
+        self.val_min = MinMetric()
+        self.test_min = MinMetric()
